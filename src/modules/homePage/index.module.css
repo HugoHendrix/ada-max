@@ -1,0 +1,220 @@
+.bg-black{
+    background-color: black;
+}
+
+.img{
+    width: 110.63px;
+    height: 30px;
+}
+
+.space{
+    display: flex;
+    gap: 5px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.bg-img{
+    background-size: cover;
+    background-position: center center;
+    background-image: url("https://beam-images.warnermediacdn.com/2024-02/bpo.jpg?host=wbd-dotcom-drupal-prd-us-east-1.s3.amazonaws.com&w=414");
+}
+
+.h-100{
+    height: 100vh;
+}
+.teste{
+    height: 100%;
+}
+
+
+@media (min-width: 576px) and (max-width: 1024px){
+    .bg-img{
+        background-image: url("https://beam-images.warnermediacdn.com/2024-02/bpo.jpg?host=wbd-dotcom-drupal-prd-us-east-1.s3.amazonaws.com&w=414");
+    }  
+}
+
+
+    .max-section-hero .iOWzCO.btn--secondary{
+  
+    }
+    .max-section-hero .my-5{
+        margin-bottom: 10rem!important;
+    } 
+    .max-column-hero .row{
+        width: 100vw;
+        height: 100px;
+        justify-content: center;
+        background: rgba(15, 15, 15, 0.6);
+        margin: -16px 0 0 -15px;
+    }
+    .max-column-hero .form-control{
+        background: #fff;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+    }
+    .max-column-hero .form-label-group>label {
+        color: rgba(62,59,68,.7);
+    }
+    
+    .max-section-hero h1>svg {
+        margin-top: 10px !important;
+        max-width: 400px;
+    }
+    
+    .max-section-hero .subtitle {
+        font-size: 40px;
+        text-align: center;
+        font-weight: 600;
+        margin-top: -10px !important;
+    }
+    
+    .max-section-hero .date {
+        font-size: 50px;
+        text-align: center;
+        color: #00F0FF;
+        font-weight: 700;
+        margin-bottom: 100px;
+    }
+    
+    .px-5.pt-5 {
+        padding-top: 0!important;
+    }
+
+    .max-section-hero h1 {
+        text-align: center;
+    }
+    
+    .max-section-hero .text-center p {
+        font-size: 40px;
+        margin-bottom: 10rem;
+    }
+    .legal-disclaimer-mail{
+        position: absolute;
+        font-size: 12px;
+        text-align: center;
+        /*max-width: 800px;*/
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: -40px;
+    }
+    
+    .intro{
+        text-align: center;
+        font-size: 40px;
+        line-height: 43px;
+        font-weight: 700;
+        margin-top: 100px;
+    }
+    .prices{
+        text-align: center;
+        font-size: 28px;
+    }
+    .price-bold{
+        font-weight: 700;
+    }
+    @media (max-width: 576px) {
+        .max-section-hero-parent::before {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 20%);
+        }
+        
+        .max-column-hero .row{
+            width: 100vw;
+            padding: 0 20px 124px 20px;
+            margin-left: -15px
+        }
+        
+        .max-column-hero .form-group{
+            padding: 0;
+        }
+         
+        .max-column-hero .form-label-group{
+            margin: 0;
+        }
+    
+        .max-section-hero .iOWzCO.btn--secondary{
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    
+        .max-column-hero .form-control{
+            border-radius: 5px;
+        }  
+        
+        .max-section-hero .text-center p {
+            margin-bottom: 3rem;
+        }
+        
+        .max-section-hero h3 {
+            padding-top: 3rem;
+        }
+        
+        .max-section-hero .subtitle {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: -35px !important;
+            letter-spacing: 5px !important;
+        }
+    
+        .max-section-hero .date {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .max-section-hero h1>svg {
+            margin-top: 0;
+        }
+        
+        .max-section-hero .my-5 {
+            margin-bottom: 5rem !important;
+        }
+        
+        .max-section-hero .legal-disclaimer-mail{
+            font-size: 10px;    
+            margin-top: 0px;
+            padding: 0 30px 
+        }
+        
+        .max-column-hero .form-label-group {
+            padding-right: 0 !important;
+        }
+        
+        .prices {
+            padding: 0 70px;
+            margin-top: 80px;
+            line-height: 30px;
+        }
+        
+        .intro {
+            margin-top: 40px;
+        }
+    }
+    
+    @media (max-width: 1200px){
+        .max-column-hero .form-label-group {
+            padding-right: 20px;
+        }
+        
+        .legal-disclaimer-mail{
+            width: 100vw;
+            background: rgba(15, 15, 15, 0.6);
+            margin-top: 0 !important;
+        }
+        
+        .max-section-hero .iOWzCO.btn--secondary{
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    }
