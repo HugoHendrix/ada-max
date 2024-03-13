@@ -16,7 +16,7 @@ export const Profile = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      i18n.changeLanguage("pt-BR");
+      i18n.changeLanguage("pt");
     }, 2000);
   }, [i18n]);
 

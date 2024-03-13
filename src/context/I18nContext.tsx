@@ -14,10 +14,10 @@ type I18nContextType = {
 export const I18nContext = createContext<I18nContextType>(null as unknown as I18nContextType);
 
 export function I18nContextProvider({children}: {children: React.ReactNode}) {
-  const [currentLanguage, setCurrentLanguage] = useState("pt-BR")
+  const [currentLanguage, setCurrentLanguage] = useState("pt")
 
   const translations = {
-    "pt-BR": {
+    "pt": {
       home: "Inicio",
       login: "Login",
       signIn: "Entrar",
