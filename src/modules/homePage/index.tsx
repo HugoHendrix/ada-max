@@ -5,11 +5,14 @@ import clsx from "clsx";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants";
 import { useAuth } from "../../providers/AuthProvider";
+import Switch from "../../components/Switch";
+import { useTranslations } from "../../hooks/useI18n";
 
 export const HomePage = () => {
 
   const { user } = useAuth();
   const navigate = useNavigate();
+  const t = useTranslations();
 
   function handleClick() {
     if(user){
@@ -25,8 +28,9 @@ export const HomePage = () => {
         <header className={clsx(styles["bg-black"], "header")}>
           <img src="../header.svg" alt="" />
           <div className={styles.space}>
-            <Button variant="subtle" onClick={handleClick}>ENTRAR</Button>
-            <Button variant="secondary">ASSINE AGORA</Button>
+            <Switch />
+            <Button variant="subtle" onClick={handleClick}>{t.signIn.toLocaleUpperCase()}</Button>
+            <Button variant="secondary">{t.signUp.toLocaleUpperCase()}</Button>
           </div>
         </header>
         <section className={clsx(styles["bg-img"], styles["max-section-hero"],styles["teste"] )}>
@@ -57,4 +61,3 @@ export const HomePage = () => {
   );
 };
 
-// adamax@adamax.com
