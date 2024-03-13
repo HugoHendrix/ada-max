@@ -29,7 +29,7 @@ export const HomePage = () => {
           <img src="../header.svg" alt="" />
           <div className={styles.space}>
             <Switch />
-            <Button variant="subtle" onClick={handleClick}>{t.signIn.toLocaleUpperCase()}</Button>
+            <Button variant="subtle" onClick={handleClick}>{t.signIn && t.signIn.toLocaleUpperCase()}</Button>
             <Button variant="secondary">{t.signUp.toLocaleUpperCase()}</Button>
           </div>
         </header>
