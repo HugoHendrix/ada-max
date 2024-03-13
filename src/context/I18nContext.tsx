@@ -1,4 +1,6 @@
 import { createContext, useState, useEffect } from "react";
+import pt from "../lang/pt-BR.json";
+import en from "../lang/en.json"
 
 type I18nContextType = {
   currentLanguage: string;
@@ -17,28 +19,7 @@ export function I18nContextProvider({children}: {children: React.ReactNode}) {
   const [currentLanguage, setCurrentLanguage] = useState("pt")
 
   const translations = {
-    "pt": {
-      home: "Inicio",
-      login: "Login",
-      signIn: "Entrar",
-      signUp: "Assine agora",
-      started: "Começar",
-      description: "Digite o endereço de e-mail e a senha da sua conta Max ou HBO Max.",
-      email: "Endereço de e-mail",
-      password: "Senha",
-      invalidCredentials: "Credenciais inválidas",
-    },
-    "en": {
-      home: "Home",
-      login: "Sign Up Now",
-      signIn: "Sign In",
-      signUp: "Sign Up Now",
-      started: "Get Started",
-      description: "Enter your Max or HBO Max account email address and password.",
-      email: "Email Address",
-      password: "Password",
-      invalidCredentials: "Invalid credentials",
-    }
+    pt,en
   }
 
   useEffect(() => {

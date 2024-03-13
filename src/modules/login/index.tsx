@@ -8,10 +8,10 @@ import {
 
 import { Link } from "react-router-dom";
 import { useLogin } from "./hooks/use-login";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "../../hooks/useI18n";
 
 export const Login = () => {
-  const { t } = useTranslation();
+  const  t  = useTranslations();
   const {
     handleSubmit,
     register,
@@ -25,20 +25,20 @@ export const Login = () => {
   return (
     <div className="container">
       <div className="header">
-        <Link to="/login" className="logo">
+        <Link to="/" className="logo">
           <img src="/max.webp" alt="Ada Max" />
         </Link>
 
-        <Button variant="subtle">Sign Up Now</Button>
+        <Button variant="subtle">{t.signUp}</Button>
       </div>
       <div className="content">
-        <h1 className="title">Get Started</h1>
+        <h1 className="title">{t.started}</h1>
         <div className="login">
-          <h2 className="title">Sign In</h2>
-          <p className="text-center">{t("login.description")}</p>
+          <h2 className="title">{t.signIn}</h2>
+          <p className="text-center">{t["login.description"]}</p>
           <form onSubmit={handleSubmit}>
             <Input
-              label="Email Address"
+              label={t.email}
               placeholder="email@email.com"
               disabled={isPending}
               error={errors?.email?.message}
@@ -46,7 +46,7 @@ export const Login = () => {
             />
 
             <div className="form-group">
-              <label htmlFor="">Password</label>
+              <label htmlFor="">{t.password}</label>
               {/* TODO: criem um componente suportando o ícone */}
               <div className="input-with-icon">
                 <input
@@ -64,10 +64,10 @@ export const Login = () => {
             </div>
             <div>
               <Button type="submit" isLoading={isPending}>
-                {t("login.signIn")}
+                {t.signIn}
               </Button>
             </div>
-            {isError && <Alert>Credencias inválidas</Alert>}
+            {isError && <Alert>{t.invalidCredentials}</Alert>}
           </form>
         </div>
       </div>

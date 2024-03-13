@@ -1,10 +1,11 @@
 {
-  "home": "Home Page Nice",
-  "login.signIn": "Sign In",
+  "home": "Home",
+  "login": "Sign Up Now",
+  "signIn": "Sign In",
+  "signUp": "Sign Up Now",
+  "started": "Get Started",
   "login.description": "Enter your Max or HBO Max account email address and password.",
-  "profile.logout": "Logout",
-  "profile.title": "Who’s Watching?",
-  "profile.edit": "Edit",
-  "profile.done": "Done",
-  "profile.newProfile": "New Profile"
+  "email": "Email Address",
+  "password": "Password",
+  "invalidCredentials": "Invalid credentials"
 }

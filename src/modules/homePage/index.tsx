@@ -22,6 +22,9 @@ export const HomePage = () => {
     navigate(ROUTES.LOGIN);
   }
 
+
+  // TODO: Add translations
+
   return (
     <>
       <div className={clsx(styles["h-100"], "container")} >

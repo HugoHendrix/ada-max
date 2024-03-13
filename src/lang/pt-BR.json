@@ -1,9 +1,11 @@
 {
-  "home": "Página inicial",
-  "login.signIn": "Entrar",
-  "profile.logout": "Sair",
-  "profile.title": "Quem está assistindo?",
-  "profile.edit": "Editar",
-  "profile.done": "Pronto",
-  "profile.newProfile": "Novo perfil"
+  "home": "Inicio",
+  "login": "Login",
+  "signIn": "Entrar",
+  "signUp": "Assine agora",
+  "started": "Começar",
+  "login.description": "Digite o endereço de e-mail e a senha da sua conta Max ou HBO Max.",
+  "email": "Endereço de e-mail",
+  "password": "Senha",
+  "invalidCredentials": "Credenciais inválidas"
 }
