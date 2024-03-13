@@ -27,8 +27,8 @@ export function I18nContextProvider({children}: {children: React.ReactNode}) {
     if (lang) {
       setCurrentLanguage(lang)
     } else {
-      setCurrentLanguage(navigator.language)
-      localStorage.setItem("@lang", navigator.language)
+      setCurrentLanguage("pt")
+      localStorage.setItem("@lang", "pt")
     }
   }, [])
 
