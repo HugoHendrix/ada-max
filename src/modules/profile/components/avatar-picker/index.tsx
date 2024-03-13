@@ -3,6 +3,7 @@ import { AvatarType } from "../../../../types";
 import clsx from "clsx";
 import styles from "./index.module.css";
 import { useGetAvatars } from "../../hooks/use-get-avatars";
+import { useTranslations } from "../../../../hooks/useI18n";
 
 type Props = {
   onSelectAvatar: (avatar: AvatarType) => void;
@@ -11,9 +12,9 @@ type Props = {
 
 export const AvatarPicker = ({ onSelectAvatar, onClose }: Props) => {
   const { data, isLoading } = useGetAvatars();
-
+  const t = useTranslations();
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div>{t.loading}</div>;
   }
   return (
     <div className={styles.wrapper}>
@@ -22,10 +23,10 @@ export const AvatarPicker = ({ onSelectAvatar, onClose }: Props) => {
           className={clsx("btn btn--primary", styles.close)}
           onClick={onClose}
         >
-          Back
+          {t.back}
         </button>
         <div className="section">
-          <h1 className="title">Choose an Avatar</h1>
+          <h1 className="title">{t["avatar.picker"]}</h1>
         </div>
         <div className={styles.container}>
           <div className={styles.scroll}>

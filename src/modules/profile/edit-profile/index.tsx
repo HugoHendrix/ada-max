@@ -7,12 +7,13 @@ import { AvatarPicker } from "../components/avatar-picker";
 import { AvatarType } from "../../../types";
 import { AxiosError } from "axios";
 import styles from "./index.module.css";
+import { useTranslations } from "../../../hooks/useI18n";
 
 export const EditProfile = () => {
   const [name, setName] = useState("");
   const [selectedAvatar, setSelectedAvatar] = useState<AvatarType | null>(null);
   const [isOpen, setIsOpen] = useState(false);
-
+  const t = useTranslations(); 
   const params = useParams<{ id: string }>();
   const id = Number(params.id);
 
@@ -71,13 +72,13 @@ export const EditProfile = () => {
       <div className="container">
         <div className={styles.limiter}>
           <div className={styles.container}>
-            <h1 className="title">Edit Profile</h1>
+            <h1 className="title">{t["profile.edit"]}</h1>
             <div className="flex-center" onClick={() => setIsOpen(!isOpen)}>
               <Avatar image={selectedAvatar?.image} isEdit />
             </div>
             <div>
               <Input
-                label="Profile Name"
+                label={t["profile.name"]}
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 disabled={isLoading}
@@ -85,13 +86,13 @@ export const EditProfile = () => {
             </div>
             <div className={styles.actions}>
               <Button fullWidth onClick={handleSave} disabled={isDisabled}>
-                Done
+                {t["profile.done"]}
               </Button>
               <Button
                 variant="subtle"
                 onClick={() => navigate(`/delete-profile/${id}`)}
               >
-                Delete Profile
+                {t["profile.delete"]}
               </Button>
             </div>
             {error && <Alert>{error}</Alert>}

@@ -10,8 +10,10 @@ import {
 import { AvatarPicker } from "../components/avatar-picker";
 import styles from "./index.module.css";
 import { useCreateProfile } from "./hooks/use-create-profile";
+import { useTranslations } from "../../../hooks/useI18n";
 
 export const CreateProfile = () => {
+  const t = useTranslations();
   const {
     register,
     handleSubmit,
@@ -32,7 +34,7 @@ export const CreateProfile = () => {
       <div className="container">
         <div className={styles.limiter}>
           <div className={styles.container}>
-            <Title>Create Profile</Title>
+            <Title>{t["profile.create"]}</Title>
             <div className="flex-center" onClick={open}>
               <Avatar image={avatar?.image} isEdit />
             </div>
@@ -44,7 +46,7 @@ export const CreateProfile = () => {
                   {...register("avatarId")}
                 />
                 <Input
-                  label="Profile Name"
+                  label={t["profile.name"]}
                   disabled={isPending}
                   error={errors.name?.message}
                   {...register("name")}
@@ -57,14 +59,14 @@ export const CreateProfile = () => {
                   isLoading={isPending}
                   disabled={isDisabled}
                 >
-                  Save
+                  {t["profile.save"]}
                 </Button>
                 <Button variant="filled" onClick={handleClose} type="button">
-                  Cancel
+                  {t["profile.cancel"]}
                 </Button>
               </div>
             </form>
-            {isError && <Alert>Deu Ruim</Alert>}
+            {isError && <Alert>{t["profile.error"]}</Alert>}
           </div>
         </div>
       </div>

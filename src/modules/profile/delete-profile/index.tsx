@@ -8,10 +8,11 @@ import { Avatar } from "../../../components/Avatar";
 import { Loader } from "../../../components/Loader";
 import { ProfileType } from "../../../types";
 import styles from "./index.module.css";
+import { useTranslations } from "../../../hooks/useI18n";
 
 export const DeleteProfile = () => {
   const [profile, setProfile] = useState<ProfileType | null>(null);
-
+  const t = useTranslations();
   const params = useParams<{ id: string }>();
   const id = Number(params.id);
 
@@ -81,11 +82,10 @@ export const DeleteProfile = () => {
           <h4>{profile?.name}</h4>
         </div>
 
-        <h1 className="title">Delete Profile ?</h1>
+        <h1 className="title">{t["profile.delete"]}?</h1>
 
         <p className={styles.p}>
-          This will permanently delete all settings and preferences for this
-          profile, including My List and Continue Watching.
+          {t["profile.delete.message"]}
         </p>
 
         <div className={styles.actions}>
@@ -94,13 +94,13 @@ export const DeleteProfile = () => {
             onClick={handleDelete}
             disabled={isLoading}
           >
-            Delete Profile
+            {t["profile.delete"]}
           </button>
           <button
             className="btn btn--full btn--primary"
             onClick={() => navigate("/profile")}
           >
-            Cancel
+            {t["profile.cancel"]}
           </button>
         </div>
       </div>

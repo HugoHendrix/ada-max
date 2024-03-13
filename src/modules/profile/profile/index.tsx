@@ -50,7 +50,7 @@ export const Profile = () => {
 
             <div className={styles.avatar__actions}>
               <Button variant="filled" onClick={toggleEditing}>
-                {isEditing ? t["profile.done"] : t["profile.edit"]}
+                {isEditing ? t["profile.done"] : t["profile.button.edit"]}
               </Button>
             </div>
           </div>
