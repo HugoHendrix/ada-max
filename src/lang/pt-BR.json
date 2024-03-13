@@ -7,5 +7,10 @@
   "login.description": "Digite o endereço de e-mail e a senha da sua conta Max ou HBO Max.",
   "email": "Endereço de e-mail",
   "password": "Senha",
-  "invalidCredentials": "Credenciais inválidas"
+  "invalidCredentials": "Credenciais inválidas",
+  "logout": "Sair",
+  "profile.newProfile": "Novo perfil",
+  "profile.done" : "Feito",
+  "profile.edit" : "Editar",
+  "profile.who": "Quem está assistindo?"
 }
