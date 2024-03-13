@@ -6,13 +6,13 @@ import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants";
 import { useAuth } from "../../providers/AuthProvider";
 import Switch from "../../components/Switch";
-import { useTranslations } from "../../hooks/useI18n";
+import { useI18n} from "../../hooks/useI18n";
 
 export const HomePage = () => {
 
   const { user } = useAuth();
   const navigate = useNavigate();
-  const t = useTranslations();
+  const { currentLanguage, translations } = useI18n();
 
   function handleClick() {
     if(user){
@@ -29,8 +29,8 @@ export const HomePage = () => {
           <img src="../header.svg" alt="" />
           <div className={styles.space}>
             <Switch />
-            <Button variant="subtle" onClick={handleClick}>{t.signIn && t.signIn.toLocaleUpperCase()}</Button>
-            <Button variant="secondary">{t.signUp.toLocaleUpperCase()}</Button>
+            <Button variant="subtle" onClick={handleClick}>{translations[currentLanguage].signIn}</Button>
+            <Button variant="secondary">{translations[currentLanguage].signUp.toLocaleUpperCase()}</Button>
           </div>
         </header>
         <section className={clsx(styles["bg-img"], styles["max-section-hero"],styles["teste"] )}>
