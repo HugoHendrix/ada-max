@@ -6,6 +6,8 @@ import { Avatar } from "../../../../components";
 import { ProfileType } from "../../../../types";
 import Switch from "../../../../components/Switch";
 import { useTranslations } from "../../../../hooks/useI18n";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../../../constants";
 
 type Props = {
   onClose: () => void;
@@ -24,6 +26,7 @@ export const DropDownMenu = ({
 }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
   const t = useTranslations();
+  const navigate = useNavigate();
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
@@ -54,7 +57,10 @@ export const DropDownMenu = ({
           <span>{profile.name}</span>
         </S.DropDownMenuItem>
       ))}
-      <S.DropDownMenuItem>
+      <S.DropDownMenuItem $border onClick={() => navigate(ROUTES.PROFILE)}>
+          {t["menu.manageProfiles"]}
+      </S.DropDownMenuItem>
+      <S.DropDownMenuItem $border >
         <Switch />
       </S.DropDownMenuItem>
       <S.DropDownMenuItem $border onClick={onLogout}>

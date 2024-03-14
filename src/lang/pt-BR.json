@@ -34,5 +34,11 @@
   "banner.home": "Home",
   "banner.series": "Séries",
   "banner.movies": "Filmes",
-  "banner.kids": "Crianças & família"
+  "banner.kids": "Crianças & família",
+  "menu.manageProfiles" : "Gerenciar perfis",
+  "home.arrived": "Chegou!",
+  "home.description": "Muito mais a ver",
+  "home.plans": "Planos a partir de ",
+  "home.price": "R$18,90 / mês"
+
 }

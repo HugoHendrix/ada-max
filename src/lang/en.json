@@ -49,5 +49,11 @@
   "banner.home": "Home",
   "banner.series": "Series",
   "banner.movies": "Movies",
-  "banner.kids": "Kids & Family"
+  "banner.kids": "Kids & Family",
+  "menu.manageProfiles" : "Manage Profiles",
+  "home.arrived": "It's arrived!",
+  "home.description": "The one to watch",
+  "home.plans": "Plans start at ",
+  "home.price": "$9.99 / month."
+
 }
