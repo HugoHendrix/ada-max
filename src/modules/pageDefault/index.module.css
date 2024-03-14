@@ -19,7 +19,7 @@ h1{
 .bg-img{
     background-size: cover;
     background-position: center center;
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 20%), radial-gradient(98% 98% at 50% 0%, rgba(0, 0, 0, 0.4) 10%, #060212),  url("../../../public/images/pageDefault.jpg");
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 20%), radial-gradient(98% 98% at 50% 0%, rgba(0, 0, 0, 0.4) 10%, #060212),  url("https://beam-images.warnermediacdn.com/2023-10/max_quilt_sports_news_oct_2023.jpg?host=wbd-dotcom-drupal-prd-us-east-1.s3.amazonaws.com&w=2000");
 }
 
 
@@ -40,7 +40,7 @@ h1{
 
 @media (min-width: 576px) and (max-width: 1024px){
     .bg-img{
-        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 20%), radial-gradient(98% 98% at 50% 0%, rgba(0, 0, 0, 0.4) 10%, #060212), url("../../../public/images/pageDefault-mobile.jpg");
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 20%), radial-gradient(98% 98% at 50% 0%, rgba(0, 0, 0, 0.4) 10%, #060212), url("https://beam-images.warnermediacdn.com/2023-10/max_quilt_sports_news_oct_2023.jpg?host=wbd-dotcom-drupal-prd-us-east-1.s3.amazonaws.com&w=414");
     }  
 }
 
