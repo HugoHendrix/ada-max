@@ -29,7 +29,7 @@ export const Login = () => {
           <img src="/max.webp" alt="Ada Max" />
         </Link>
 
-        <Button variant="subtle">{t.signUp}</Button>
+        <Button variant="subtle">{t["login.signUp"]}</Button>
       </div>
       <div className="content">
         <h1 className="title">{t.started}</h1>

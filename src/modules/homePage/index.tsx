@@ -33,7 +33,7 @@ export const HomePage = () => {
           <div className={styles.space}>
             <Switch />
             <Button variant="subtle" onClick={handleClick}>{t.signIn.toLocaleUpperCase()}</Button>
-            <Button variant="secondary">{t.signUp.toLocaleUpperCase()}</Button>
+            <Button variant="secondary">{t["home.signUp"].toLocaleUpperCase()}</Button>
           </div>
         </header>
         <section className={clsx(styles["bg-img"], styles["max-section-hero"],styles["teste"] )}>

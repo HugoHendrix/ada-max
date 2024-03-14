@@ -2,12 +2,14 @@ import * as S from "../styles";
 
 import { Banner } from "../../../types";
 import { Button } from "../../../components";
+import { useTranslations } from "../../../hooks/useI18n";
 
 type Props = {
   banner: Banner;
 };
 
 export const HomeBanner = ({ banner }: Props) => {
+  const t = useTranslations();
   return (
     <S.BannerInner>
       <S.BannerImage>
@@ -28,7 +30,7 @@ export const HomeBanner = ({ banner }: Props) => {
         </div>
         <p>{banner.description}</p>
         <div>
-          <Button variant="filled">Go to Movie</Button>
+          <Button variant="filled">{t["banner.watch"]}</Button>
         </div>
       </S.BannerContent>
     </S.BannerInner>

@@ -2,7 +2,8 @@
   "home": "Home",
   "login": "Sign Up Now",
   "signIn": "Sign In",
-  "signUp": "Sign Up Now",
+  "home.signUp": "Sign Up Now",
+  "login.signUp": "Sign Up",
   "started": "Get Started",
   "signOut": "Sign Out",
   "login.description": "Enter your Max or HBO Max account email address and password.",
@@ -43,5 +44,10 @@
   "profile.edit": "Edit Profile",
   "avatar.picker": "Choose an Avatar",
   "loading": "Loading...",
-  "back": "Back"
+  "back": "Back",
+  "banner.watch": "Go to Movie",
+  "banner.home": "Home",
+  "banner.series": "Series",
+  "banner.movies": "Movies",
+  "banner.kids": "Kids & Family"
 }

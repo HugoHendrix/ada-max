@@ -8,14 +8,14 @@ import clsx from "clsx";
 import { useGetBanners } from "./hooks/get-banners";
 import { useGetTrailOffers } from "./hooks/get-trail-offers";
 import { useState } from "react";
+import { useTranslations } from "../../hooks/useI18n";
 
 export const Home = () => {
   const { data: banners } = useGetBanners();
   const { data: trailOffers } = useGetTrailOffers();
   const [index, setIndex] = useState(0);
   const banner = banners?.[index] || null;
-
-  console.log({ trailOffers });
+  const t = useTranslations();
 
   return (
     <>
@@ -26,13 +26,13 @@ export const Home = () => {
             <S.Logo src="/max.webp" alt="Ada Max" />
           </Link>
           <S.Menu>
-            <S.MenuItem $active>Home</S.MenuItem>
-            <S.MenuItem>Series</S.MenuItem>
-            <S.MenuItem>Movies</S.MenuItem>
+            <S.MenuItem $active>{t["banner.home"]}</S.MenuItem>
+            <S.MenuItem>{t["banner.series"]}</S.MenuItem>
+            <S.MenuItem>{t["banner.movies"]}</S.MenuItem>
             <S.MenuItem>
               <img src="/hbo.webp" width={32} />
             </S.MenuItem>
-            <S.MenuItem>Kids & Family</S.MenuItem>
+            <S.MenuItem>{t["banner.kids"]}</S.MenuItem>
           </S.Menu>
           <HomeMenu />
         </S.Header>
