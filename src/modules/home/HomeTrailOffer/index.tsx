@@ -19,7 +19,7 @@ export const HomeTrailOffer = ({ trailOffer }: Props) => {
   const [startLoading, setStartLoading] = useState(false);
 
   const { ref, inView } = useInView({
-    threshold: 0.5,
+    threshold: 0.4,
   });
 
   const { data } = useGetOffer(offerId, startLoading);

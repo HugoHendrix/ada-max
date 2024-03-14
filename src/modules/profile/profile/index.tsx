@@ -1,16 +1,18 @@
 import { Avatar, Button, Loader, Title } from "../../../components";
 import styles from "./index.module.css";
 import { Link } from "react-router-dom";
-import { useGetProfiles } from "../hooks/use-get-profiles";
 import { useProfile } from "./hooks/use-profile";
 import { useAuth } from "../../../providers/AuthProvider";
 import clsx from "clsx";
 import { useTranslations } from "../../../hooks/useI18n";
 
 export const Profile = () => {
-  const { data, isLoading } = useGetProfiles();
+
   const { logout } = useAuth();
-  const { goToPage, isEditing, toggleEditing } = useProfile();
+
+  const { profiles, goToPage, isEditing, toggleEditing, isLoading } =
+    useProfile();
+
   const t = useTranslations();
 
 
@@ -22,14 +24,14 @@ export const Profile = () => {
         <div className="section">
           <div className={styles["btn-logout"]}>
             <Button variant="filled" onClick={() => logout()}>
-              {t.logout}
+              {t.signOut}
             </Button>
           </div>
             <Title>{t['profile.who']}</Title>
 
             {/* TODO: componentizar esses aqui */}
             <div className={styles.avatars}>
-              {data?.map((profile) => (
+              {profiles?.map((profile) => (
                 <button
                   className={styles.avatar__item}
                   key={profile.id}

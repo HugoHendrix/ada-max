@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   position: absolute;
@@ -283,4 +283,58 @@ export const OfferListItemSkeleton = styled.div`
   width: 100%;
   height: 100%;
   aspect-ratio: 0.666667 / 1;
+`;
+
+export const DropDownMenu = styled.div`
+  position: fixed;
+  top: 0;
+  right: 32px;
+  width: 200px;
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  z-index: 400;
+  border-radius: 0 0 8px 8px;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  overflow: hidden;
+
+  @keyframes slide-top {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+`;
+
+export const DropDownMenuItem = styled.div<{
+  $active?: boolean;
+  $border?: boolean;
+}>`
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #ddd;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  &:hover {
+    background-color: rgba(25, 25, 25, 0.9);
+  }
+
+  ${({ $border }) =>
+    $border && `border-top: 1px solid rgba(255, 255, 255, 0.07);`}
+
+  ${({ $active }) =>
+    $active &&
+    css`
+      background-color: rgba(0, 0, 0, 1);
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 1);
+      }
+    `}
 `;

@@ -8,7 +8,7 @@
   "email": "Endereço de e-mail",
   "password": "Senha",
   "invalidCredentials": "Credenciais inválidas",
-  "logout": "Sair",
+  "signOut": "Sair",
   "profile.newProfile": "Novo perfil",
   "profile.done" : "Feito",
   "profile.button.edit" : "Editar",

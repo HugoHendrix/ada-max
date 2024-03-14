@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "./providers/AuthProvider";
 import { Backstage } from "./modules/backstage";
 import { CreateProfile } from "./modules/profile/create-profile";
+import { CurrentProfileProvider } from "./providers/CurrentProfileProvider";
 import { DeleteProfile } from "./modules/profile/delete-profile";
 import { EditProfile } from "./modules/profile/edit-profile";
 import { ExampleStyled } from "./examples/example-context/example-styled";
@@ -32,61 +33,65 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <BrowserRouter>
         <I18nContextProvider>
           <AuthProvider>
-            <Routes>
-              {/* TODO: Remover testes e alterar rota /home */}
-              <Route path="/example" element={<ExampleStyled />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/" element={<HomePage />} />
-              <Route path={ROUTES.LOGIN} element={<Login />} />
-              <Route
-                path={ROUTES.PROFILE}
-                element={
-                  <ProtectedRoute role="user">
-                    <Profile />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path={ROUTES.CREATE_PROFILE}
-                element={
-                  <ProtectedRoute role="user">
-                    <CreateProfile />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path={ROUTES.EDIT_PROFILE}
-                element={
-                  <ProtectedRoute role="user">
-                    <EditProfile />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path={ROUTES.DELETE_PROFILE}
-                element={
-                  <ProtectedRoute role="user">
-                    <DeleteProfile />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path={ROUTES.BACKSTAGE}
-                element={
-                  <ProtectedRoute role="admin">
-                    <Backstage />
-                  </ProtectedRoute>
-                }
-              />
+              <CurrentProfileProvider>
+                <Routes>
 
-              {/* TODO: IMPLEMENTAR */}
-              <Route
-                path="*"
-                element={
-                  <PageDefault />
-                }
-              />
-            </Routes>
+                  {/* TODO: Remover testes e alterar rota /home */}
+
+                  <Route path="/example" element={<ExampleStyled />} />
+                  <Route path="/home" element={<Home />} />
+                  <Route path="/" element={<HomePage />} />
+                  <Route path={ROUTES.LOGIN} element={<Login />} />
+                  <Route
+                    path={ROUTES.PROFILE}
+                    element={
+                      <ProtectedRoute role="user">
+                        <Profile />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path={ROUTES.CREATE_PROFILE}
+                    element={
+                      <ProtectedRoute role="user">
+                        <CreateProfile />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path={ROUTES.EDIT_PROFILE}
+                    element={
+                      <ProtectedRoute role="user">
+                        <EditProfile />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path={ROUTES.DELETE_PROFILE}
+                    element={
+                      <ProtectedRoute role="user">
+                        <DeleteProfile />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path={ROUTES.BACKSTAGE}
+                    element={
+                      <ProtectedRoute role="admin">
+                        <Backstage />
+                      </ProtectedRoute>
+                    }
+                  />
+
+                  {/* TODO: IMPLEMENTAR */}
+                  <Route
+                    path="*"
+                    element={
+                      <PageDefault />
+                    }
+                  />
+              </Routes>
+            </CurrentProfileProvider>
           </AuthProvider>
         </I18nContextProvider>
       </BrowserRouter>
