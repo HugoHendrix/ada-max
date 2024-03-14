@@ -1,12 +1,4 @@
-import {
-  Alert,
-  Avatar,
-  Button,
-  Input,
-  Loader,
-  Title,
-} from "../../../components";
-
+import {Alert, Avatar, Button, Input, Loader, Title} from "../../../components";
 import { AvatarPicker } from "../components/avatar-picker";
 import styles from "./index.module.css";
 import { useCreateProfile } from "./hooks/use-create-profile";
@@ -35,7 +27,7 @@ export const CreateProfile = () => {
         <div className={styles.limiter}>
           <div className={styles.container}>
             <Title>{t["profile.create"]}</Title>
-            <div className="flex-center" onClick={open}>
+            <div className={styles["flex-center"]} onClick={open}>
               <Avatar image={avatar?.image} isEdit />
             </div>
             <form onSubmit={handleSubmit}>

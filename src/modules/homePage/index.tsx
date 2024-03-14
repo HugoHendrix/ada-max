@@ -1,45 +1,21 @@
-import { Button } from "../../components";
 import styles from "./index.module.css";
 import clsx from "clsx";
-import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../../constants";
-import { useAuth } from "../../providers/AuthProvider";
-import Switch from "../../components/Switch";
 import { useTranslations } from "../../hooks/useI18n";
+import { Header } from "../../components/Header";
 
 export const HomePage = () => {
-  const { user } = useAuth();
-  const navigate = useNavigate();
+  
   const t = useTranslations();
-
-  function handleClick() {
-    if (user) {
-      navigate(ROUTES.PROFILE);
-      return;
-    }
-    navigate(ROUTES.LOGIN);
-  }
 
   return (
     <>
-      <div className={clsx(styles["h-100"], "container")}>
-        <header className={clsx(styles["bg-black"], "header")}>
-          <img src="../header.svg" alt="" />
-          <div className={styles.space}>
-            <Switch />
-            <Button variant="subtle" onClick={handleClick}>
-              {t.signIn.toLocaleUpperCase()}
-            </Button>
-            <Button variant="secondary">
-              {t["home.signUp"].toLocaleUpperCase()}
-            </Button>
-          </div>
-        </header>
+      <div className={clsx(styles["h-100vh"], "container")}>
+        <Header/>
         <section
           className={clsx(
             styles["bg-img"],
             styles["max-section-hero"],
-            styles["teste"]
+            styles["h-100"]
           )}
         >
           <div className="">

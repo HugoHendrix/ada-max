@@ -9,37 +9,32 @@ import { useTranslations } from "../../../hooks/useI18n";
 export const Profile = () => {
 
   const { logout } = useAuth();
-
+  const t = useTranslations();
   const { profiles, goToPage, isEditing, toggleEditing, isLoading } =
     useProfile();
-
-  const t = useTranslations();
 
 
   return (
     <>
       <div className="container">
-      
       <div>  
-        <div className="section">
+        <div className={styles.section}>
           <div className={styles["btn-logout"]}>
             <Button variant="filled" onClick={() => logout()}>
               {t.signOut}
             </Button>
           </div>
             <Title>{t['profile.who']}</Title>
-
-            {/* TODO: componentizar esses aqui */}
             <div className={styles.avatars}>
               {profiles?.map((profile) => (
-                <button
+                <Button
                   className={styles.avatar__item}
                   key={profile.id}
                   onClick={() => goToPage(profile.id)}
                 >
                   <Avatar image={profile.avatar.image} isEdit={isEditing} />
                   <div className={styles.avatar__name}>{profile.name}</div>
-                </button>
+                </Button>
               ))}
               <Link
                 to="/create-profile"

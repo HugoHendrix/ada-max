@@ -6,6 +6,9 @@ import {
   Input,
 } from "../../components";
 
+
+// TODO: usar css moduless
+
 import { Link } from "react-router-dom";
 import { useLogin } from "./hooks/use-login";
 import { useTranslations } from "../../hooks/useI18n";
@@ -49,14 +52,14 @@ export const Login = () => {
               <label htmlFor="">{t.password}</label>
               {/* TODO: criem um componente suportando o ícone */}
               <div className="input-with-icon">
-                <input
+                <Input
                   type={showPassword ? "text" : "password"}
                   disabled={isPending}
                   {...register("password")}
                 />
-                <button className="eye" type="button" onClick={togglePassword}>
+                <Button className="eye" type="button" onClick={togglePassword}>
                   {showPassword ? <IconEyeClosed /> : <IconEyeOpened />}
-                </button>
+                </Button>
               </div>
               {errors?.password?.message && (
                 <span>{errors?.password?.message}</span>

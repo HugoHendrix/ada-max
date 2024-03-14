@@ -66,6 +66,7 @@ export const DeleteProfile = () => {
     return (
       <Alert>
         {error} clica aqui pra voltar{" "}
+        {/* TODO: componentizar e arrumar  */}
         <button onClick={() => navigate("/profile")}>
           Voltar para o perfil
         </button>
@@ -88,6 +89,8 @@ export const DeleteProfile = () => {
           {t["profile.delete.message"]}
         </p>
 
+        {/* TODO: componentizar botões */}
+        
         <div className={styles.actions}>
           <button
             className="btn btn--full btn--white"

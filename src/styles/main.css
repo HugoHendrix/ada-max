@@ -68,6 +68,9 @@ body {
   padding: 0 40px;
 }
 
+
+/* FIXME: não utilizado */
+
 .header__backdrop {
   display: none;
   animation-duration: 50ms;
@@ -81,6 +84,7 @@ body {
   position: absolute;
 }
 
+/* TODO: mudar pra login */
 .content {
   display: flex;
   flex-direction: column;
@@ -282,34 +286,10 @@ body {
   }
 }
 
-.loading-icon {
+/* .loading-icon {
   animation: rotate 1s linear infinite;
-}
-
-.section {
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 40px;
-  position: relative;
-  z-index: 10;
-}
-
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* =============== */
-/* PROFILE */
-/* =============== */
+} */
 
 
-.example {
-  margin: 40px auto;
-  max-width: 500px;
-}
 
-.red {
-  color: red;
-}
+

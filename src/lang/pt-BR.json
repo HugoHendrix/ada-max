@@ -21,8 +21,6 @@
   "profile.name": "Nome do perfil",
   "profile.delete": "Excluir perfil",
   "profile.delete.confirmation": "Tem certeza de que deseja excluir este perfil?",
-  "profile.delete.yes": "Sim",
-  "profile.delete.no": "Não",
   "profile.delete.error": "Erro ao excluir perfil",
   "profile.delete.success": "Perfil excluído com sucesso",
   "profile.delete.message": "Isso excluirá permanentemente todas as configurações e preferências para este perfil, incluindo Minha Lista e Continuar Assistindo.",
@@ -39,6 +37,9 @@
   "home.arrived": "Chegou!",
   "home.description": "Muito mais a ver",
   "home.plans": "Planos a partir de ",
-  "home.price": "R$18,90 / mês"
+  "home.price": "R$18,90 / mês",
+  "pageDefault.error": "Opa!",
+  "pageDefault.message": "Parece que esse link não está funcionando.",
+  "pageDefault.button": "Início"
 
 }

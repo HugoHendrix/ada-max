@@ -22,7 +22,7 @@ export const Home = () => {
       <S.Container>
         <S.Unscrollable />
         <S.Header>
-          <Link to="/login">
+          <Link to="/profile">
             <S.Logo src="/max.webp" alt="Ada Max" />
           </Link>
           <S.Menu>

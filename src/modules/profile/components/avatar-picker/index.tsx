@@ -1,9 +1,9 @@
 import { Avatar } from "../../../../components/Avatar";
 import { AvatarType } from "../../../../types";
-import clsx from "clsx";
 import styles from "./index.module.css";
 import { useGetAvatars } from "../../hooks/use-get-avatars";
 import { useTranslations } from "../../../../hooks/useI18n";
+import { Button } from "../../../../components";
 
 type Props = {
   onSelectAvatar: (avatar: AvatarType) => void;
@@ -18,17 +18,16 @@ export const AvatarPicker = ({ onSelectAvatar, onClose }: Props) => {
   }
   return (
     <div className={styles.wrapper}>
-      <div className="container">
-        <button
-          className={clsx("btn btn--primary", styles.close)}
-          onClick={onClose}
-        >
-          {t.back}
-        </button>
-        <div className="section">
-          <h1 className="title">{t["avatar.picker"]}</h1>
+      <div className={styles.container}>
+          <div className={styles.close}>
+            <Button variant="filled" onClick={onClose}>
+              {t.back}
+            </Button>
+          </div>
+        <div className={styles.section}>
+          <h1 className={styles.title}>{t["avatar.picker"]}</h1>
         </div>
-        <div className={styles.container}>
+        <div className={styles.avatars}>
           <div className={styles.scroll}>
             {data?.map((avatar) => {
               return (
