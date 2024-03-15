@@ -4,13 +4,14 @@ import { useTranslations } from "../../hooks/useI18n";
 import { Header } from "../../components/Header";
 
 export const HomePage = () => {
-  
   const t = useTranslations();
+
+ 
 
   return (
     <>
-      <div className={clsx(styles["h-100vh"], "container")}>
-        <Header/>
+      <div className={clsx(styles["h-100vh"], styles.container)}>
+        <Header background translation buttons="upAndDown" />
         <section
           className={clsx(
             styles["bg-img"],

@@ -23,9 +23,9 @@ export const CreateProfile = () => {
 
   return (
     <>
-      <div className="container">
+      <div className={styles.container}>
         <div className={styles.limiter}>
-          <div className={styles.container}>
+          <div className={styles.box}>
             <Title>{t["profile.create"]}</Title>
             <div className={styles["flex-center"]} onClick={open}>
               <Avatar image={avatar?.image} isEdit />

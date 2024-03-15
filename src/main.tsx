@@ -1,9 +1,8 @@
 import "./styles/reset.css";
 import "./styles/main.css";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
 import { AuthProvider } from "./providers/AuthProvider";
 import { Backstage } from "./modules/backstage";
 import { CreateProfile } from "./modules/profile/create-profile";
@@ -22,6 +21,8 @@ import { setupI18n } from "./lang/setup";
 import { HomePage } from "./modules/homePage";
 import { PageDefault } from "./modules/pageDefault/PageDefault";
 import { I18nContextProvider } from "./context/I18nContext";
+import { ErrorBoundary } from "react-error-boundary";
+import { PageError } from "./components/ErrorBoundary";
 
 const queryClient = new QueryClient();
 
@@ -29,72 +30,69 @@ setupI18n();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <I18nContextProvider>
-          <AuthProvider>
-              <CurrentProfileProvider>
-                <Routes>
-
-                  {/* TODO: Remover testes e alterar rota /home */}
-
-                  <Route path="/example" element={<ExampleStyled />} />
-                  <Route path="/home" element={<Home />} />
-                  <Route path="/" element={<HomePage />} />
-                  <Route path={ROUTES.LOGIN} element={<Login />} />
-                  <Route
-                    path={ROUTES.PROFILE}
-                    element={
-                      <ProtectedRoute role="user">
-                        <Profile />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    path={ROUTES.CREATE_PROFILE}
-                    element={
-                      <ProtectedRoute role="user">
-                        <CreateProfile />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    path={ROUTES.EDIT_PROFILE}
-                    element={
-                      <ProtectedRoute role="user">
-                        <EditProfile />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    path={ROUTES.DELETE_PROFILE}
-                    element={
-                      <ProtectedRoute role="user">
-                        <DeleteProfile />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    path={ROUTES.BACKSTAGE}
-                    element={
-                      <ProtectedRoute role="admin">
-                        <Backstage />
-                      </ProtectedRoute>
-                    }
-                  />
-
-                  {/* TODO: IMPLEMENTAR */}
-                  <Route
-                    path="*"
-                    element={
-                      <PageDefault />
-                    }
-                  />
-              </Routes>
-            </CurrentProfileProvider>
-          </AuthProvider>
-        </I18nContextProvider>
-      </BrowserRouter>
-    </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <I18nContextProvider>
+            <AuthProvider>
+                <CurrentProfileProvider>
+                <ErrorBoundary FallbackComponent={PageError}>
+                  <Routes>
+                    <Route path="/example" element={<ExampleStyled />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/" element={<HomePage />} />
+                    <Route path={ROUTES.LOGIN} element={<Login />} />
+                    <Route
+                      path={ROUTES.PROFILE}
+                      element={
+                        <ProtectedRoute role="user">
+                          <Profile />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path={ROUTES.CREATE_PROFILE}
+                      element={
+                        <ProtectedRoute role="user">
+                          <CreateProfile />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path={ROUTES.EDIT_PROFILE}
+                      element={
+                        <ProtectedRoute role="user">
+                          <EditProfile />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path={ROUTES.DELETE_PROFILE}
+                      element={
+                        <ProtectedRoute role="user">
+                          <DeleteProfile />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path={ROUTES.BACKSTAGE}
+                      element={
+                        <ProtectedRoute role="admin">
+                          <Backstage />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path="*"
+                      element={
+                        <PageDefault />
+                      }
+                    />
+                </Routes>
+      </ErrorBoundary>
+              </CurrentProfileProvider>
+            </AuthProvider>
+          </I18nContextProvider>
+        </BrowserRouter>
+      </QueryClientProvider>
   </React.StrictMode>
 );

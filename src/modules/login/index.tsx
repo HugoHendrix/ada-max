@@ -5,16 +5,15 @@ import {
   IconEyeOpened,
   Input,
 } from "../../components";
+import styles from "./index.module.css";
 
 
-// TODO: usar css moduless
-
-import { Link } from "react-router-dom";
 import { useLogin } from "./hooks/use-login";
 import { useTranslations } from "../../hooks/useI18n";
+import { Header } from "../../components/Header";
 
 export const Login = () => {
-  const  t  = useTranslations();
+  const t = useTranslations();
   const {
     handleSubmit,
     register,
@@ -26,19 +25,13 @@ export const Login = () => {
   } = useLogin();
 
   return (
-    <div className="container">
-      <div className="header">
-        <Link to="/" className="logo">
-          <img src="/max.webp" alt="Ada Max" />
-        </Link>
-
-        <Button variant="subtle">{t["login.signUp"]}</Button>
-      </div>
+    <div className={styles.container}>
+      <Header buttons="signDown" />
       <div className="content">
-        <h1 className="title">{t.started}</h1>
+        <h1 className={styles.title}>{t.started}</h1>
         <div className="login">
-          <h2 className="title">{t.signIn}</h2>
-          <p className="text-center">{t["login.description"]}</p>
+          <h2 className={styles.title}>{t.signIn}</h2>
+          <p className={styles["text-center"]}>{t["login.description"]}</p>
           <form onSubmit={handleSubmit}>
             <Input
               label={t.email}
@@ -50,7 +43,6 @@ export const Login = () => {
 
             <div className="form-group">
               <label htmlFor="">{t.password}</label>
-              {/* TODO: criem um componente suportando o ícone */}
               <div className="input-with-icon">
                 <Input
                   type={showPassword ? "text" : "password"}

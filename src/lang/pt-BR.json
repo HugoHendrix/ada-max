@@ -40,6 +40,7 @@
   "home.price": "R$18,90 / mês",
   "pageDefault.error": "Opa!",
   "pageDefault.message": "Parece que esse link não está funcionando.",
-  "pageDefault.button": "Início"
+  "pageDefault.button": "Início",
+  "pageError": "Página não encontrada!"
 
 }

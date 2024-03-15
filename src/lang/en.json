@@ -38,6 +38,7 @@
   "home.price": "$9.99 / month.",
   "pageDefault.error": "Oops!",
   "pageDefault.message": "Looks like this link isn't working.",
-  "pageDefault.button": "Home"
+  "pageDefault.button": "Home",
+  "pageError": "Page Not Found"
 
 }

@@ -9,8 +9,8 @@ export const PageDefault = () => {
     const t = useTranslations();
     const navigate = useNavigate();
     return (
-    <div className={clsx(styles["h-100vh"], "container")}>
-        <Header />
+    <div className={clsx(styles["h-100vh"], styles.container)}>
+        <Header background translation buttons="upAndDown"/>
         <section
         className={clsx(
             styles["bg-img"],
@@ -18,13 +18,13 @@ export const PageDefault = () => {
             styles["h-100"]
         )}
     >
-        <div className="">
+        <div>
             <div>
-                <div className="text-center">
-                <h1>{t["pageDefault.error"]} <br /> {t["pageDefault.message"]}</h1>
+                <div className= {styles["text-center"]}>
+                    <h1>{t["pageDefault.error"]} <br /> {t["pageDefault.message"]}</h1>
                 </div>
             </div>
-                <Button onClick={() => navigate("/")}>{t["pageDefault.button"]}</Button>
+            <Button onClick={() => navigate("/")}>{t["pageDefault.button"]}</Button>
         </div>
     </section>
     </div>

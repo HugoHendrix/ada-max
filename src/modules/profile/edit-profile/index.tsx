@@ -69,10 +69,10 @@ export const EditProfile = () => {
 
   return (
     <>
-      <div className="container">
+      <div className={styles.container}>
         <div className={styles.limiter}>
-          <div className={styles.container}>
-            <h1 className="title">{t["profile.edit"]}</h1>
+          <div className={styles.box}>
+            <h1 className={styles.title}>{t["profile.edit"]}</h1>
             <div className={styles["flex-center"]} onClick={() => setIsOpen(!isOpen)}>
               <Avatar image={selectedAvatar?.image} isEdit />
             </div>

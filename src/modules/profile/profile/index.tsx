@@ -16,7 +16,7 @@ export const Profile = () => {
 
   return (
     <>
-      <div className="container">
+      <div className={styles.container}>
       <div>  
         <div className={styles.section}>
           <div className={styles["btn-logout"]}>

@@ -7,7 +7,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants";
 import styles from "./index.module.css";
 
-export const Header = () => {
+
+
+type HeaderProps = {
+    background?: boolean;
+    translation?: boolean;
+    buttons: "upAndDown" | "signDown";
+}
+
+
+
+
+export const Header = ({ background, translation, buttons}:HeaderProps) => {
     const { user } = useAuth();
     const  t  = useTranslations();
     const navigate = useNavigate();
@@ -21,18 +32,27 @@ export const Header = () => {
     }
 
     return (
-        <div className={clsx(styles["bg-black"], styles.header)}>
+        <div className={clsx( styles.header, {
+            [styles["bg-black"]]: background === true,
+        })}>
             <Link to="/" className="logo">
                 <img src="/max.webp" alt="Ada Max" />
             </Link>
             <div className={styles.space}>
-                <Switch />
-                <Button variant="subtle" onClick={handleClick}>
-                {t.signIn.toLocaleUpperCase()}
-                </Button>
-                <Button variant="secondary">
-                {t["home.signUp"].toLocaleUpperCase()}
-            </Button>
+                {translation && <Switch />}
+
+            {
+                buttons ===  "upAndDown"?
+                <><Button variant="subtle" onClick={handleClick}>
+                            {t.signIn.toLocaleUpperCase()}
+                        </Button><Button variant="secondary">
+                                {t["home.signUp"].toLocaleUpperCase()}
+                            </Button></> : ''
+            } 
+        {
+            buttons ===  "signDown"? <Button variant="subtle"> {t["login.signUp"]} </Button> : ''
+        }
+
             </div>
         </div>
     );

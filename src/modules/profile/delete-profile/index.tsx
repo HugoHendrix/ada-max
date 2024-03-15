@@ -9,6 +9,7 @@ import { Loader } from "../../../components/Loader";
 import { ProfileType } from "../../../types";
 import styles from "./index.module.css";
 import { useTranslations } from "../../../hooks/useI18n";
+import { Button } from "../../../components";
 
 export const DeleteProfile = () => {
   const [profile, setProfile] = useState<ProfileType | null>(null);
@@ -65,46 +66,40 @@ export const DeleteProfile = () => {
   if (error) {
     return (
       <Alert>
-        {error} clica aqui pra voltar{" "}
-        {/* TODO: componentizar e arrumar  */}
-        <button onClick={() => navigate("/profile")}>
+        {error} 
+        <Button onClick={() => navigate("/profile")}>
           Voltar para o perfil
-        </button>
+        </Button>
       </Alert>
     );
   }
 
   return (
     <>
-      <div className="container">
+      <div className={styles.container}>
         <div className={styles.header}>
           <Avatar image={profile?.avatar.image} disabled />
 
           <h4>{profile?.name}</h4>
         </div>
 
-        <h1 className="title">{t["profile.delete"]}?</h1>
+        <h1 className={styles.title}>{t["profile.delete"]}?</h1>
 
         <p className={styles.p}>
           {t["profile.delete.message"]}
         </p>
-
-        {/* TODO: componentizar botões */}
-        
         <div className={styles.actions}>
-          <button
-            className="btn btn--full btn--white"
+          <Button
             onClick={handleDelete}
-            disabled={isLoading}
           >
             {t["profile.delete"]}
-          </button>
-          <button
-            className="btn btn--full btn--primary"
+          </Button>
+          <Button
+            variant="filled"
             onClick={() => navigate("/profile")}
           >
             {t["profile.cancel"]}
-          </button>
+          </Button>
         </div>
       </div>
 
